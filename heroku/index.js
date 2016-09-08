@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
   console.log(req);
-  res.send('get('hub_challenge')');
+  res.send('it works');
 });
 
 app.get(['/facebook', '/instagram'], function(req, res) {
