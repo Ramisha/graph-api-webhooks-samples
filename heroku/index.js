@@ -18,8 +18,16 @@ app.use(xhub({ algorithm: 'sha1', secret: process.env.APP_SECRET }));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
+   if (
+    req.param('hub.mode') == 'subscribe' &&
+    req.param('hub.verify_token') == 'token'
+  ) {
+    res.send( req.param('hub.challenge'));
+  } else {
+    res.sendStatus(400);
+  }
   console.log(req);
-  res.send('it works');
+  //res.send('it works');
 });
 
 app.get(['/facebook', '/instagram'], function(req, res) {
