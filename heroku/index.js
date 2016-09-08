@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
   console.log(req);
-  res.send('It works!');
+  res.send('1975827994');
 });
 
 app.get(['/facebook', '/instagram'], function(req, res) {
