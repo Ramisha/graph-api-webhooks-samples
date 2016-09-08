@@ -27,7 +27,7 @@ app.get(['/facebook', '/instagram'], function(req, res) {
     req.param('hub.mode') == 'subscribe' &&
     req.param('hub.verify_token') == 'token'
   ) {
-    res.send(req.param('hub.challenge'));
+    res.send('test');
   } else {
     res.sendStatus(400);
   }
