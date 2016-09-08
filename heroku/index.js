@@ -27,7 +27,7 @@ app.get('/', function(req, res) {
     res.sendStatus(400);
   }
   console.log(req);
-  //res.send('it works');
+  res.send('it works');
 });
 
 app.get(['/facebook', '/instagram'], function(req, res) {
